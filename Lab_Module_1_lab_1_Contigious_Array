@@ -1,0 +1,52 @@
+//Contigious Array 
+//Solution
+
+public class Main {
+
+ public static void dideverthing(int[] nums){
+     HashMap<Integer,Integer>counts = new HashMap<>();
+     counts.put(0,-1);
+     int zero = 0;
+     int one = 0 ;
+     int len = 0;
+     
+     
+     for(int i = 0 ; i< nums.length;i++){
+        if(nums[i] == 0 ) {
+            zero++;
+            
+        } else {
+            one++;
+        }
+        
+        if(counts.containsKey(zero-one)){
+             len = Math.max(len,i - counts.get(zero-one));
+            } else{
+                counts.put(zero-one,i);
+            }
+        }
+        
+       System.out.println(len);
+     
+     
+    
+    }
+ 
+ 
+     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int n = input.nextInt();
+        int []arr = new int[n];
+        for(int i = 0;i<n;i++){
+            arr[i] = input.nextInt();
+        
+        }
+        dideverthing(arr);
+        
+        
+       
+    }
+    
+   
+}
+                                                                                                                            
