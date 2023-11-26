@@ -1,0 +1,43 @@
+//String Analysis 
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        String text = input.nextLine();
+         
+        int uppercaseC = 0;
+        int lowercaseC = 0;
+        int digitC     = 0;
+        int OtherC     = 0;
+        
+        for(int i = 0; i < text.length();i++){
+        
+            char ch = text.charAt(i);
+            if(Character.isUpperCase(ch)){
+               uppercaseC++;
+            }else if (Character.isLowerCase(ch)){
+               lowercaseC++;}else if (Character.isDigit(ch)){
+               digitC++;}
+               else{
+                 OtherC++;}
+                 
+                }
+                
+                
+            int totalCharacter = text.length();
+            DecimalFormat f = new DecimalFormat("##.###");
+            double uppercaseP = (double) uppercaseC/totalCharacter * 100;
+            double lowercaseP = (double) lowercaseC/totalCharacter * 100;
+            double digitP = (double) digitC / totalCharacter * 100;
+            double symbolP = (double) OtherC / totalCharacter * 100;
+            
+            System.out.println("Uppercase letters :" +f.format(uppercaseP)+ "%");
+            System.out.println("Lowercase letters :" +f.format(lowercaseP)+ "%");
+            System.out.println("Digits: " +f.format(digitP) +"%");
+            System.out.println("Other Character (symbols):"+ f.format(symbolP) +"%");
+        
+    }
+    
+}
+                       
